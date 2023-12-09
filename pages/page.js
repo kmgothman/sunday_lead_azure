@@ -1,34 +1,40 @@
+
 import Image from 'next/image'
 import styles from './page.module.css'
 import axios from 'axios';
 import Parser from 'rss-parser'
+import useEffect from 'react'
 
 import Header from './components/header/header.component'
 import EpisodeCard from './components/episode_card/episode_card.component'
 
-export async function getServerSideProps() {
+const fetchEpisodes = async () => {
   try {
     const rssFeedUrl = 'https://anchor.fm/s/db8d89f8/podcast/rss';
     const response = await axios.get(rssFeedUrl);
     const parser = new Parser();
     const feed = await parser.parseString(response.data);
 
+    // Extract the latest episodes
     const latestEpisodes = await feed.items.slice(0,6) // Change the number to the desired count
-    const data = {episodes: latestEpisodes, test: 'test'}
-    return { props: { data } }
+    return latestEpisodes
+    // setEpisodes(latestEpisodes);
   } catch (error) {
     console.error('Error fetching podcast episodes:', error);
   }
-}
+};
 
-export default function Home({ data }) {
+export default async function Home() {
+
+  let episodes = await fetchEpisodes()
+
 
   return (
     <main className={styles.main}>
       <div>
        <Header/>
         <div className={styles.panel}>
-          <h1>Can't get enough Sunday Lead?</h1>
+          <h1>Can't get enough Sunday Lead? </h1>
           <p>Congrats! You've found your people.</p>
           <a>Listen</a>
         </div>
@@ -45,7 +51,7 @@ export default function Home({ data }) {
     
           </div>
           <div className={styles.cardContainer}>
-            {data.episodes.map((episode)=> 
+            {episodes.map((episode)=> 
               {return(
                 <EpisodeCard 
                   title={episode.title} 
@@ -69,7 +75,7 @@ export default function Home({ data }) {
           </div>
           <div>
             <h2>Recent Episodes</h2>
-            {data.episodes.map((episode)=> 
+            {episodes.map((episode)=> 
               {return(
                 <a href={episode.link}>{episode.title}</a>
                 )})} 
