@@ -1,0 +1,213 @@
+.main {
+    background-color: #faf3e3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .panel {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background-image: url('/images/drawing.png');
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    padding: 25% 50% 12% 10%;
+  }
+  
+  .panel h1{
+    font-size: 4em;
+    color: #ffffff;
+  }
+  .panel p {
+    font-size: 1.5em;
+  }
+  
+  .panel a{
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 4px;
+      background: linear-gradient(to right, #85baff, #4997fc);
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      transition: background 0.3s ease-in-out;
+      width: 150px;
+      margin-top: 8px;
+  }
+  .panel a:hover{
+    background: linear-gradient(to right, #6eadff, #2e89ff);
+  }
+  
+ .heading {
+    color: #239678;
+    padding-left: 5%;
+ }
+  
+  .description {
+    display: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    font-size: 0.85rem;
+    max-width: var(--max-width);
+    width: 100%;
+    z-index: 2;
+    font-family: var(--font-mono);
+  }
+  
+  .description a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .description p {
+    position: relative;
+    margin: 0;
+    padding: 1rem;
+    background-color: rgba(var(--callout-rgb), 0.5);
+    border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+    border-radius: var(--border-radius);
+  }
+
+  .aboutYou {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .aboutYou img {
+    background-color: #6eadff;
+    padding: 20px;
+    border-radius: 20px;
+    width: 40%;
+  }
+  .aboutYou p {
+    width: 40%;
+    color:#239678;
+  }
+
+  .host {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .host p {
+    width: 40%;
+  }
+
+  .host img {
+    width: 40%;
+  }
+
+  .hosts {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+  }
+  
+  
+  /* Enable hover only on non-touch devices */
+  @media (hover: hover) and (pointer: fine) {
+    .card:hover {
+      background: rgba(var(--card-rgb), 0.1);
+      border: 1px solid rgba(var(--card-border-rgb), 0.15);
+    }
+  
+    .card:hover span {
+      transform: translateX(4px);
+    }
+  }
+  
+  @media (prefers-reduced-motion) {
+    .card:hover span {
+      transform: none;
+    }
+  }
+  
+  /* Mobile */
+  @media (max-width: 700px) {
+    .main {
+      align-items: normal;
+    }
+    .panel {
+      background-image: none;
+      background-color: #0d0d11;
+      padding: 10%;
+      align-items: left;
+  
+    }
+    .panel h1{
+      font-size: 4em;
+    }
+    .panel p {
+      font-size: 1.5em;
+    }
+    
+    .panel a{
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 4px;
+        background: linear-gradient(to right, #85baff, #4997fc);
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out;
+        width: 150px;
+        margin-top: 8px;
+    }
+  
+    .searchDiv input{
+      background-color: transparent;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+    }
+    .searchDiv input::placeholder{
+      color:#0d0d11;
+    }
+
+  
+  }
+  
+  /* Tablet and Smaller Desktop */
+  @media (min-width: 701px) and (max-width: 1120px) {
+    .grid {
+      grid-template-columns: repeat(2, 50%);
+    }
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .vercelLogo {
+      filter: invert(1);
+    }
+  
+    .logo {
+      filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
+    }
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+  

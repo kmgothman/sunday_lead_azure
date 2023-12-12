@@ -25,6 +25,7 @@
     flex-direction: column;
     justify-content: flex-start;
     padding: 20px;
+    color: #439ccc;
 }
 .description h2 {
     color: #439ccc;

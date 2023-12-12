@@ -1,0 +1,35 @@
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px;
+    background-color: #6cb0e1;
+  }
+  
+  .footer div{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 30%;
+  }
+  
+  .footer h2{
+    margin-bottom: 10px;
+  }
+  .footer a{
+    margin-bottom: 7px;
+    color:#ffffff;
+    cursor: pointer;
+  }
+  .footer a:hover{
+    color:#2e89ff;
+  }
+
+/* Mobile */
+@media (max-width: 700px) {
+  
+    .footer div {
+      width: 90%;
+    }
+  
+  }

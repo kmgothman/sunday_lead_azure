@@ -2,6 +2,7 @@
 
 import styles from './navigation.module.css'
 import { useState, useEffect } from 'react';
+import Link from 'next/link'
 
 const Navigation = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -24,9 +25,11 @@ const Navigation = () => {
 
     return (
         <div className={`${styles.nav} ${isScrolled ? styles.colorBackground : ''}`} >
-            <img src='/images/logo.png' width={isScrolled ? '110' : '150'} />
+            <Link href="/">
+              <img src='/images/logo.png' width={isScrolled ? '110' : '150'} />
+            </Link>
             <div>
-                <a>About</a>
+                <Link href="/about">About</Link>
                 <a>Episodes</a>
                 <a>Contact</a>
             </div>
