@@ -42,7 +42,7 @@ export default function Home({ data }) {
         <div className={styles.episodes}> 
           <div className={styles.searchDiv}>
             <h2>Latest Episodes</h2>
-            <input type="text" id="searchInput" placeholder="Search..."></input>
+            
     
           </div>
           <div className={styles.cardContainer}>

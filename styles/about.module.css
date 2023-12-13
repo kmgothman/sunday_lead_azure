@@ -117,9 +117,14 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
   }
+  /* .hosts div {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    margin: 20px;
+   } */
   
   
   /* Enable hover only on non-touch devices */

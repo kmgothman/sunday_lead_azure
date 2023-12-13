@@ -4,47 +4,37 @@ import styles from './host_card.module.css'
 import { useState, useRef} from 'react';
 
 const HostCard = ({imageSrc,description, color}) => {
-    const cardDivRef = useRef(null)
     const [isFlipped, setIsFlipped] = useState(false);
 
-    const handleCardFlip = (event) => {
-      const { clientX, clientY } = event;
-      const cardDiv = cardDivRef.current;
-      console.log(cardDiv)
-      
-      if (cardDiv) {
-        const rect = cardDiv.getBoundingClientRect();
-        const isMouseInside = (
-          clientX >= rect.left &&
-          clientX <= rect.right &&
-          clientY >= rect.top &&
-          clientY <= rect.bottom
-        )
-        if (isMouseInside) {
-          setIsFlipped(true)
-        } else {
-          setIsFlipped(false)
-        }
-    };
+    const handleEnter = (event) => {
+    setIsFlipped(true)
   }
+    const handleLeave = () => {
+      setIsFlipped(false)
+    }
+    const handleClick = () => {
+      setIsFlipped(!isFlipped)
+    }
   
     return (
       <div 
         className={styles.flipCardContainer}
-        onMouseMove={handleCardFlip}
-        onMouseLeave={handleCardFlip}
-        ref={cardDivRef}
-        // onMouseEnter={handleCardFlip}
-        // onMouseLeave={handleCardFlip}
+        onMouseLeave={handleLeave}
+        onMouseEnter={handleEnter}
+        onClick={handleClick}
       >
         <div
-          className={styles.flipCard}
+          className={`${styles.flipCard} ${isFlipped ? styles.flipped : ''}`}
           style={{backgroundColor: color}}
         >
           {isFlipped ? 
-                  <p>{description}</p>
+            <div className={styles.cardBack}>
+              <p>{description}</p>
+            </div>
           :
-                  <img src={imageSrc} alt="Card" />
+            <div className={styles.cardFront} >
+              <img src={imageSrc} alt="Card" />
+            </div>
           }
         </div>
       </div>
@@ -53,4 +43,3 @@ const HostCard = ({imageSrc,description, color}) => {
 
 export default HostCard
 
-// styles.flip-card isFlipped ? styles.flipped : ''}
