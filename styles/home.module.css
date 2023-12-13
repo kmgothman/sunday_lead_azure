@@ -138,16 +138,18 @@
   }
   .panel {
     background-image: none;
-    background-color: #0d0d11;
+    background-color: #faf3e3;
     padding: 10%;
     align-items: left;
 
   }
   .panel h1{
     font-size: 4em;
+    color:#6cb0e1;
   }
   .panel p {
     font-size: 1.5em;
+    color: #6cb0e1;
   }
   
   .panel a{
