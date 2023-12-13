@@ -30,7 +30,7 @@ const Navigation = () => {
             </Link>
             <div>
                 <Link href="/about">About</Link>
-                <a>Episodes</a>
+                <Link href="/episodes">Episodes</Link>
                 <a>Contact</a>
             </div>
         </div>
