@@ -1,0 +1,156 @@
+.card {
+    position: absolute;
+    top: 10%;
+    transition: left 0.6s ease-in-out, top 0.6s ease-in-out, transform 0.6s, background 0.6s ease-in-out;
+    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+    background-color: #def1ff;
+    border-radius: 5px;
+    width: 20%;
+    height: 80%;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(228, 156, 156, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.card img {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+    color: #439ccc;
+}
+.description h2 {
+    color: #439ccc;
+    margin-bottom: 10px;
+}
+
+.description h3 {
+    margin-top: 10px;
+    color: #439ccc;
+}
+
+.description h3:hover {
+    color: #497fe3;
+}
+
+
+.leftLeft{
+    left: 5%;
+    transform: perspective(1500px) rotateY(75deg);
+    z-index: 18;
+}
+.leftLeft::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%; /* Adjust the width of the shadow as needed */
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)); /* Adjust the gradient and opacity as needed */
+    z-index: 19; /* Ensure the gradient is behind the content */
+    transition: width 0.6s ease-in-out;
+  }
+
+.left {
+    left: 20%;
+    transform: perspective(1500px) rotateY(50deg);
+    z-index: 19;
+}
+.left::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%; /* Adjust the width of the shadow as needed */
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)); /* Adjust the gradient and opacity as needed */
+    z-index: 20; /* Ensure the gradient is behind the content */
+    transition: width 0.6s ease-in-out;
+  }
+.center {
+    left: 40%;
+    transform: perspective(1500px) rotateY(0deg);
+    z-index: 20;
+}
+.center::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0%; /* Adjust the width of the shadow as needed */
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)); /* Adjust the gradient and opacity as needed */
+    z-index: 21; /* Ensure the gradient is behind the content */
+    transition: width 0.6s ease-in-out;
+  }
+.right {
+    left: 60%;
+    transform: perspective(1500px) rotateY(-50deg);
+    z-index: 19;
+}
+.right::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Adjust the width of the shadow as needed */
+    height: 100%;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)); /* Adjust the gradient and opacity as needed */
+    z-index: 20; /* Ensure the gradient is behind the content */
+    transition: width 0.6s ease-in-out;  }
+
+.rightRight{
+    left: 75%;
+    transform: perspective(1500px) rotateY(-75deg);
+    z-index: 18;
+}
+.rightRight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Adjust the width of the shadow as needed */
+    height: 100%;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)); /* Adjust the gradient and opacity as needed */
+    z-index: 19; /* Ensure the gradient is behind the content */
+    /* transition: width 0.6s ease-in-out; */
+  }
+
+@media (max-width: 700px) {
+    .card {
+        width: 90%;
+        transform: perspective(1500px) rotateY(0deg);
+        margin: 30px;
+    }
+
+    .leftLeft {
+        left: -200%;
+    }
+
+    .left{
+        left:-100%;
+    }
+
+    .center {
+        left:-10px;
+    }
+
+    .right{
+        left: 100%;
+    }
+    .rightRight{
+        left: 200%;
+    }
+}
+

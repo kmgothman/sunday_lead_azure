@@ -6,6 +6,7 @@ import Parser from 'rss-parser'
 import Header from '../components/header/header.component'
 import EpisodeCard from '../components/episode_card/episode_card.component'
 import Footer from '../components/footer/footer.component'
+import Carousel from '../components/carousel/carousel.component'
 
 export async function getServerSideProps() {
   try {
@@ -14,7 +15,7 @@ export async function getServerSideProps() {
     const parser = new Parser();
     const feed = await parser.parseString(response.data);
 
-    const latestEpisodes = await feed.items.slice(0,6) // Change the number to the desired count
+    const latestEpisodes = await feed.items.slice(0,5) // Change the number to the desired count
     const data = {episodes: latestEpisodes, test: 'test'}
     return { props: { data } }
   } catch (error) {
@@ -29,10 +30,9 @@ export default function Episodes({ data }) {
       <div>
        <Header/>
         <div className={styles.panel}>
-          <h1>Can't get enough Sunday Lead?</h1>
-          <p>Congrats! You've found your people.</p>
-          <a>Listen</a>
+          <h1>Episodes</h1>
         </div>
+        <Carousel episodes={data.episodes}/>
         <div className={styles.episodes}> 
           <div className={styles.searchDiv}>
             <h2>Latest Episodes</h2>
