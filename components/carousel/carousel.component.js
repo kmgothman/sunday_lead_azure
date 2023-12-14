@@ -16,7 +16,6 @@ const Carousel = ({ episodes }) => {
     const nextCard = () => {
       setCurrentIndex((currentIndex-1+5)%5);
     };
-    const episode = episodes[0]
     return (
       <div className={styles.carouselContainer}>
         <div className={styles.carousel}>

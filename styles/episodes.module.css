@@ -1,0 +1,192 @@
+.main {
+    background-color: #faf3e3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  
+  .panel {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background-image: url('/images/drawing.png');
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    padding: 25% 50% 12% 10%;
+  }
+  
+  .panel h1{
+    font-size: 4em;
+  }
+
+  .recent {
+    color:#239678;
+    font-size: 3em;
+    margin-left: 100px;
+  }
+  
+  .episodes {
+    display: flex;
+    flex-direction: column;
+    padding: 75px;
+    background-color: #faf3e3;
+    color: #239678;
+  }
+  
+  .searchDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .searchDiv h2{
+    font-size: 3em;
+  }
+  .searchDiv input{
+    background-color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 3px;
+  }
+  
+  .description {
+    display: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    font-size: 0.85rem;
+    max-width: var(--max-width);
+    width: 100%;
+    z-index: 2;
+    font-family: var(--font-mono);
+  }
+  
+
+  
+  .cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  
+  /* Enable hover only on non-touch devices */
+  @media (hover: hover) and (pointer: fine) {
+    .card:hover {
+      background: rgba(var(--card-rgb), 0.1);
+      border: 1px solid rgba(var(--card-border-rgb), 0.15);
+    }
+  
+    .card:hover span {
+      transform: translateX(4px);
+    }
+  }
+  
+  @media (prefers-reduced-motion) {
+    .card:hover span {
+      transform: none;
+    }
+  }
+  
+  /* Mobile */
+  @media (max-width: 700px) {
+    .main {
+      align-items: normal;
+    }
+    .panel {
+      background-image: none;
+      background-color: #faf3e3;
+      padding: 10%;
+      align-items: left;
+  
+    }
+    .panel h1{
+      font-size: 4em;
+      color:#6cb0e1;
+    }
+    .panel p {
+      font-size: 1.5em;
+      color: #6cb0e1;
+    }
+    
+    .panel a{
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 4px;
+        background: linear-gradient(to right, #85baff, #4997fc);
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out;
+        width: 150px;
+        margin-top: 8px;
+    }
+  
+    .medias {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    .medias img {
+      width: 150px;
+      height: 150px;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 20px;
+    }
+    .medias a {
+      padding: 0;
+      margin: 0;
+    }
+  
+    .episodes {
+      padding: 10%;
+    }
+    .searchDiv input{
+      background-color: transparent;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+    }
+    .searchDiv input::placeholder{
+      color:#0d0d11;
+    }
+    .cardContainer {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+  
+  
+  }
+  
+  /* Tablet and Smaller Desktop */
+  @media (min-width: 701px) and (max-width: 1120px) {
+    .grid {
+      grid-template-columns: repeat(2, 50%);
+    }
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .vercelLogo {
+      filter: invert(1);
+    }
+  
+    .logo {
+      filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
+    }
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }

@@ -1,0 +1,53 @@
+.cell {
+    width: 100%;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #f0c87d;
+    color: #f0c87d;
+}
+
+.left {
+   
+    display: flex;
+    justify-content: flex-start;
+}
+.left img{
+    width: 75px;
+    height: 75px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+.middle h3{
+    margin-top:.5em;
+    margin-bottom: .5em;
+}
+.more {
+    font-weight: bold;
+    cursor: pointer;
+}
+.more:hover{
+    color: rgb(252, 180, 46);
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100px;
+}
+.right p{
+    margin: 0px;
+}
+
+

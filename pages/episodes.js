@@ -1,5 +1,4 @@
-import Image from 'next/image'
-import styles from '../styles/home.module.css'
+import styles from '../styles/episodes.module.css'
 import axios from 'axios';
 import Parser from 'rss-parser'
 
@@ -7,6 +6,7 @@ import Header from '../components/header/header.component'
 import EpisodeCard from '../components/episode_card/episode_card.component'
 import Footer from '../components/footer/footer.component'
 import Carousel from '../components/carousel/carousel.component'
+import EpisodeTable from '../components/episode_table/episode_table.component';
 
 export async function getServerSideProps() {
   try {
@@ -16,7 +16,8 @@ export async function getServerSideProps() {
     const feed = await parser.parseString(response.data);
 
     const latestEpisodes = await feed.items.slice(0,5) // Change the number to the desired count
-    const data = {episodes: latestEpisodes, test: 'test'}
+    const allEpisodes = await feed.items
+    const data = {episodes: latestEpisodes, test: 'test',allEpisodes:allEpisodes}
     return { props: { data } }
   } catch (error) {
     console.error('Error fetching podcast episodes:', error);
@@ -32,23 +33,13 @@ export default function Episodes({ data }) {
         <div className={styles.panel}>
           <h1>Episodes</h1>
         </div>
+        <h2 className={styles.recent}>Recent</h2>
         <Carousel episodes={data.episodes}/>
         <div className={styles.episodes}> 
           <div className={styles.searchDiv}>
             <h2>Latest Episodes</h2>
-            
-    
           </div>
-          <div className={styles.cardContainer}>
-            {data.episodes.map((episode)=> 
-              {return(
-                <EpisodeCard 
-                  title={episode.title} 
-                  description={episode.contentSnippet} 
-                  imgLink={episode.itunes.image} 
-                  link={episode.link}
-                />)})}  
-          </div>
+          <EpisodeTable episodes={data.allEpisodes}/>
         </div>
         <Footer episodes={data.episodes}/>
       </div>
