@@ -4,6 +4,7 @@ import EpisodeCell from './episode_cell/episode_cell.component'
 const EpisodeTable = ({episodes}) => {
     return(
         <div className={styles.table}>
+            <ul>
             {episodes.map((episode,index)=>{
                 return(
                     <EpisodeCell 
@@ -18,6 +19,7 @@ const EpisodeTable = ({episodes}) => {
                 )
             })
             }
+            </ul>
         </div>
     )
 }

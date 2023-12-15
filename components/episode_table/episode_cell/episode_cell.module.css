@@ -7,6 +7,9 @@
     border: 1px solid #f0c87d;
     color: #f0c87d;
 }
+.list{
+    padding-bottom: 10px;
+}
 
 .left {
    
@@ -30,6 +33,10 @@
 .middle h3{
     margin-top:.5em;
     margin-bottom: .5em;
+}
+.middle p { 
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .more {
     font-weight: bold;

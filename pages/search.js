@@ -1,15 +1,18 @@
-import styles from '../styles/episodes.module.css'
+
+import styles from '../styles/search.module.css'
 import axios from 'axios';
 import Parser from 'rss-parser'
+import { useRouter, useEffect } from 'next/router';
+
+// import { getFilteredEpisodes } from '../api/episodes';
 
 import Header from '../components/header/header.component'
-import EpisodeCard from '../components/episode_card/episode_card.component'
 import Footer from '../components/footer/footer.component'
-import Carousel from '../components/carousel/carousel.component'
 import EpisodeTable from '../components/episode_table/episode_table.component';
-import SearchBar from '../components/episode_search/episode_search.component';
+
 
 export async function getServerSideProps() {
+
   try {
     const rssFeedUrl = 'https://anchor.fm/s/db8d89f8/podcast/rss';
     const response = await axios.get(rssFeedUrl);
@@ -18,7 +21,7 @@ export async function getServerSideProps() {
 
     const latestEpisodes = await feed.items.slice(0,5) // Change the number to the desired count
     const allEpisodes = await feed.items
-    const data = {episodes: latestEpisodes, test: 'test',allEpisodes:allEpisodes}
+    const data = {episodes: latestEpisodes,allEpisodes:allEpisodes}
     return { props: { data } }
   } catch (error) {
     console.error('Error fetching podcast episodes:', error);
@@ -26,24 +29,27 @@ export async function getServerSideProps() {
 }
 
 export default function Episodes({ data }) {
+    const router = useRouter()
+    const q=decodeURIComponent(router.asPath).replace('/search?q=','')
+    const queryWords = q.toLowerCase().split(' ');
+
+    const results = data.episodes.filter((episode) => {
+        const title = episode.title.toLowerCase();
+        const description = episode.contentSnippet.toLowerCase();
+        return queryWords.some(word => title.includes(word) || description.includes(word));
+
+      });
+
 
   return (
     <main className={styles.main}>
       <div>
        <Header/>
         <div className={styles.panel}>
-          <h1>Episodes</h1>
+          <h1>Search results for: {q}</h1>
         </div>
-        <div className={styles.recent}>
-          <h2 >Recent</h2>
-        </div>
-        <Carousel episodes={data.episodes}/>
-        
-          
-        
         <div className={styles.episodes}> 
-          <SearchBar/>
-          <EpisodeTable episodes={data.allEpisodes}/>
+          <EpisodeTable episodes={results}/>
         </div>
         <Footer episodes={data.episodes}/>
       </div>

@@ -8,11 +8,14 @@ const EpisodeCell = ({title,description,imgLink,link,pubDate,duration}) => {
 
     const snippit=description.split(' ').slice(0,6).map((word)=>{return(word+' ')})
 
-    const moreClick = () => {
+    const moreClick = (event) => {
+        event.preventDefault();
         setMoreToggle(!moreToggle)
     }
 
     return(
+        <li className={styles.list}>
+        <a href={link}>
         <div className={styles.cell}>
             <div className={styles.left}>
                 <img src={imgLink}/>
@@ -27,7 +30,7 @@ const EpisodeCell = ({title,description,imgLink,link,pubDate,duration}) => {
                 {moreToggle ? 
                     <></>
                 :
-                    <p>. . .</p>
+                    <p style={{fontWeight:'bold'}}>. . .</p>
                 }
                 <p onClick={moreClick} className={styles.more}>{moreToggle ? 
                     'See Less'
@@ -42,6 +45,8 @@ const EpisodeCell = ({title,description,imgLink,link,pubDate,duration}) => {
                 <p>{duration}</p>
             </div>
         </div>
+        </a>
+        </li>
     )
 }
 

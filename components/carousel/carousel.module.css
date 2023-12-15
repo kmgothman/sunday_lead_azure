@@ -6,7 +6,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #faf3e3;
+    background-color: #239678;
   }
   
   .carousel {
@@ -22,7 +22,7 @@
     top: 50%;
     width: 50px;
     height: 50px;
-    background-color: #239678;
+    background-color: #f0c87d;
     color: white;
     z-index: 20;
     border: none;

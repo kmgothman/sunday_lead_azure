@@ -1,0 +1,32 @@
+.search {
+    
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.search input{
+    background-color: white;
+    border: none;
+    width: 85%;
+    height: 40px;
+    color: #239678;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.search button{
+    width: 15%;
+    height: 40px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    font-weight: 500;
+    background-color: #239678;
+    color: #ffffff;
+    border: none;
+}
+
+.search button:hover{
+    background-color: #0d765a;
+}

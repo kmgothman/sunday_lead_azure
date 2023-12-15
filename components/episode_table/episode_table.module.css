@@ -7,3 +7,8 @@
     padding: 24px;
     gap: 16px;
 }
+.table ul{
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
