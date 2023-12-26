@@ -6,6 +6,8 @@
     align-items: center;
     transition: background-color 0.5s ease-in-out;
     z-index: 21;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .colorBackground {
@@ -13,14 +15,21 @@
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   }
 
-.nav a {
-  margin: 10px;
+
+
+.nav a:hover{
+  color: #239678;
+  transition: color 0.5s;
 }
 
 .nav img{
-  padding-left: 10px;
-  padding-bottom: 3px;
+  padding-top: 6px;
+  padding-bottom: 6px;
   transition: width 0.5s ease-in-out;
+}
+
+.links a {
+  margin-left: 20px;
 }
 
 @media (max-width: 700px) {

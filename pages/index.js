@@ -35,7 +35,7 @@ export default function Home({ data }) {
         </div>
         <div className={styles.medias}>
           <a href='https://podcasts.apple.com/us/podcast/sunday-lead/id1674646958'><img src="/icons/apple.png" alt="Apple" width={150} height={150} /></a>
-          <a><img src="/icons/youtube.png" alt="Youtube" width={150} height={150} /></a>
+          <a href='https://www.instagram.com/sundayleadpod/'><img src="/icons/instagram.png" alt="Instagram" width={150} height={150} /></a>
           <a href='https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy9kYjhkODlmOC9wb2RjYXN0L3Jzcw?sa=X&ved=0CAMQ4aUDahcKEwiAi4y2nMmCAxUAAAAAHQAAAAAQNg'><img src="/icons/google.png" alt="Googe" width={150} height={150} /></a>
           <a href='https://open.spotify.com/show/4qvEFOl1hUsDmGStvtptws?si=3mVFBoR1TFSPsQZkw5sBfw'><img src="/icons/spotify.png" alt="Spotify" width={150} height={150} /></a>
         </div>
