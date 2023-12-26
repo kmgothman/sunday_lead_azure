@@ -6,7 +6,7 @@
     background-color: #6cb0e1;
   }
   
-  .footer div{
+  .column{
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -22,7 +22,19 @@
     cursor: pointer;
   }
   .footer a:hover{
-    color:#2e89ff;
+    color: #239678;
+    transition: color 0.5s;
+  }
+
+  .social {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .social a{
+    padding-right: 15px;
+    font-size: large;
+    
   }
 
 /* Mobile */

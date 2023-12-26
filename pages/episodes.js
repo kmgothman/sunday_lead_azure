@@ -38,9 +38,6 @@ export default function Episodes({ data }) {
           <h2 >Recent</h2>
         </div>
         <Carousel episodes={data.episodes}/>
-        
-          
-        
         <div className={styles.episodes}> 
           <SearchBar/>
           <EpisodeTable episodes={data.allEpisodes}/>

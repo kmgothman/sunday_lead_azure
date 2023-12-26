@@ -9,7 +9,7 @@ const Header = () => {
         <div className={styles.header}>
             <div className={styles.social}>
                 <a>Newsletter</a>
-                <div>
+                <div >
                     <a href='https://www.instagram.com/sundayleadpod/'><FaInstagram className={styles.icon} /></a>
                     <a href='https://open.spotify.com/show/4qvEFOl1hUsDmGStvtptws?si=3mVFBoR1TFSPsQZkw5sBfw'><FaSpotify className={styles.icon} /></a>
                     <a href='https://anchor.fm/s/db8d89f8/podcast/rss'><FaRss className={styles.icon} /></a>

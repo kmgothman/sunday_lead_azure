@@ -52,14 +52,8 @@
  }
   
   .description {
-    display: inherit;
-    justify-content: inherit;
-    align-items: inherit;
-    font-size: 0.85rem;
-    max-width: var(--max-width);
-    width: 100%;
-    z-index: 2;
-    font-family: var(--font-mono);
+    display: flex;
+    flex-direction: column;
   }
   
   .description a {
@@ -86,13 +80,13 @@
     padding: 20px;
   }
   .aboutYou img {
-    background-color: #6eadff;
+    background-color: #6cb0e1;
     padding: 20px;
     border-radius: 20px;
     width: 40%;
   }
   .aboutYou p {
-    width: 40%;
+    width: 100%;
     color:#239678;
   }
 

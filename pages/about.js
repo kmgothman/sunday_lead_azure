@@ -38,20 +38,11 @@ const About = ({data}) => {
         </div>
         <div className={styles.aboutYou}>
             <img src='/images/logo.png'/>
-            <p>Are you a Christian looking for some quality content? Then the Sunday 
-                Lead is for you! Whether you're a seasoned golfer, a devout believer, 
-                or simply someone navigating the fascinating crossroads of spirituality 
-                and athletics, you've found your community. Our listeners share a 
-                curiosity for the unexplored territories of these two realms, seeking 
-                a harmonious balance in a world that often separates them. Hailing from 
-                various corners of the globe, our community mirrors the rich blend of 
-                experiences that make up our hosts' backgrounds—be it the heartland 
-                warmth of the Midwest or the unmistakable charm of the southern states. 
-                Here, we celebrate the shared love for faith and sports, recognizing 
-                that expertise is not a prerequisite, but passion and an open heart 
-                certainly are. Join us on this journey where we explore, learn, and 
-                unite in the fascinating intersection of these two extraordinary facets 
-                of life.</p>
+            <div className={styles.description}>
+              <p>Interested in content that delves into the intersection of spirituality and sport? Welcome to the Sunday Lead—a platform for those intrigued by the convergence of faith and fairways. Our podcast is a meeting ground for avid golfers, spiritual seekers, and anyone intrigued by the interplay of athletic pursuit and spiritual growth.</p>
+              <p>Our audience is as diverse as the conversations we foster, coming from all walks of life and every corner of the world, drawn together by a shared intrigue for what happens when the worlds of spirituality and sports collide. We don’t just celebrate the commonalities between these two worlds; we explore their unique synergy.</p>
+              <p>No need to be an expert here—enthusiasm and openness are our only entry tickets. So join us as we embark on a collective exploration, learning and connecting through the compelling nexus of faith and athleticism.</p>
+            </div>
         </div>
         <div className={styles.hosts}>
             <HostCard description={aboutAidan} imageSrc={'/images/aidan.png'} color={'#239678'}/>
