@@ -6,15 +6,15 @@ const Carousel = ({ episodes }) => {
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    const stylesArray = ['leftLeft','left','center','right','rightRight']
+    const stylesArray = ['hiddenLeft','offLeft','leftLeft','left','center','right','rightRight','offRight','hiddenRight']
 
     const prevCard = () => {
-      setCurrentIndex((currentIndex + 1)%5);
+      setCurrentIndex((currentIndex + 1)%9);
       console.log(stylesArray[currentIndex])
     };
   
     const nextCard = () => {
-      setCurrentIndex((currentIndex-1+5)%5);
+      setCurrentIndex((currentIndex-1+9)%9);
     };
     return (
       <div className={styles.carouselContainer}>
@@ -27,7 +27,7 @@ const Carousel = ({ episodes }) => {
                 description={episode.contentSnippet} 
                 imgLink={episode.itunes.image} 
                 link={episode.link}
-                position={stylesArray[(currentIndex+index)%5]}
+                position={stylesArray[(currentIndex+index)%9]}
             />
             )
           })}

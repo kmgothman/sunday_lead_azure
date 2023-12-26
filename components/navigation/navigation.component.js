@@ -31,7 +31,7 @@ const Navigation = () => {
             <div>
                 <Link href="/about">About</Link>
                 <Link href="/episodes">Episodes</Link>
-                <a>Contact</a>
+                <Link href="/contact">Contact</Link>
             </div>
         </div>
     )

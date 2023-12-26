@@ -1,7 +1,10 @@
+.card:not(.hiddenLeft),
+.card:not(.hiddenRight) {
+    transition: left 0.6s ease-in-out, top 0.6s ease-in-out, transform 0.6s, background 0.6s ease-in-out;
+}
 .card {
     position: absolute;
     top: 10%;
-    transition: left 0.6s ease-in-out, top 0.6s ease-in-out, transform 0.6s, background 0.6s ease-in-out;
     transform-style: preserve-3d;
     display: flex;
     flex-direction: column;
@@ -43,8 +46,18 @@
 .description h3:hover {
     color: #497fe3;
 }
+.hiddenLeft{
+    opacity: 0;
+    visibility: hidden;
+    left: 0%;
+    transform: perspective(1500px) rotateY(90deg);
+}
 
+.offLeft{
+    left: 0%;
+    transform: perspective(1500px) rotateY(90deg);
 
+}
 .leftLeft{
     left: 5%;
     transform: perspective(1500px) rotateY(75deg);
@@ -126,6 +139,28 @@
     z-index: 19; /* Ensure the gradient is behind the content */
     /* transition: width 0.6s ease-in-out; */
   }
+
+  .offRight{
+    left: 100%;
+    transform: perspective(1500px) rotateY(-90deg);
+
+}
+
+.hiddenRight{
+    opacity: 0;
+    visibility: hidden;
+    left: 100%;
+    transform: perspective(1500px) rotateY(-90deg);
+}
+
+.hiddenLeft::before,
+.offLeft::before,
+.offRight::before,
+.hiddenRight::before {
+    background: none;
+    width: 0;
+    transition: none;
+}
 
 @media (max-width: 700px) {
     .card {

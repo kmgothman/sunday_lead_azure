@@ -28,7 +28,7 @@ export async function getServerSideProps() {
   }
 }
 
-export default function Episodes({ data }) {
+export default function Search({ data }) {
     const router = useRouter()
     const q=decodeURIComponent(router.asPath).replace('/search?q=','')
     const queryWords = q.toLowerCase().split(' ');

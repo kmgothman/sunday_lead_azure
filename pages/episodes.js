@@ -16,7 +16,7 @@ export async function getServerSideProps() {
     const parser = new Parser();
     const feed = await parser.parseString(response.data);
 
-    const latestEpisodes = await feed.items.slice(0,5) // Change the number to the desired count
+    const latestEpisodes = await feed.items.slice(0,9) // Change the number to the desired count
     const allEpisodes = await feed.items
     const data = {episodes: latestEpisodes, test: 'test',allEpisodes:allEpisodes}
     return { props: { data } }
