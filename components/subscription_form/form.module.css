@@ -7,6 +7,7 @@
     padding-left: 10%;
     padding-right: 10%;
     color: #eeeeee;
+    position: relative
 }
 
 .form form{
@@ -74,8 +75,38 @@
     transition: background-color .3s;
 }
 
+.loader {
+    position: absolute;
+    left: 43%;
+    width: 150px;
+}
+.grey {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeee;
+    opacity: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color .3s;
+}
+.confirmation {
+    display: flex;
+    width: 25%;
+    height: 13%;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    opacity: 100%;
+    color:#fac751;
+    border-radius: 10px;
+}
 @media (max-width: 700px) {
     .form button{
         width: 24%;
+    }
+    .loader{
+        left: 32%;
     }
 }

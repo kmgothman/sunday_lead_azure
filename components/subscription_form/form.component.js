@@ -3,27 +3,57 @@ import {useState} from 'react'
 import styles from './form.module.css'
 
 const Form = () => {
-    const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        birthday: '',
-        country: ''
-      });
+  const initialForm = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    country: ''
+  }
+  const [formData, setFormData] = useState(initialForm);
+  const [loading, setLoading] = useState(false)
+  const [confirmation, setConfirmation] = useState(null)
+  
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const confirmForm = (message) => {
+    setConfirmation(message)
+    setTimeout(setConfirmation,3000,null)
+  }
     
-      const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prevState => ({
-          ...prevState,
-          [name]: value
-        }));
-      };
-    
-      const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle the form submission logic here, such as sending to an API or outputting the data
-        console.log(formData);
-      };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true)
+    const url = 'https://script.google.com/macros/s/AKfycbyLszlQ9Ce3nzITv4K0QAyX5wfbcfnfKxPzkgG2lcbUcsMlbf6nLSEpQy7ipnv3sga30Q/exec'
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        contentType: 'application/json',
+        body: JSON.stringify(formData)
+      })
+      const result = await response.json()
+      if (result.result == "success") {
+        console.log("success")
+        setLoading(false)
+        setFormData(initialForm)
+        confirmForm('Thank You for Subscribing!')
+      } else {
+        setLoading(false)
+        setFormData(initialForm)
+        confirmForm('Sorry, somethings wrong :(')
+      }
+    } catch (error) {
+      console.log(error)
+      setLoading(false)
+      setFormData(initialForm)
+      confirmForm('Sorry, somethings wrong :(')
+    } 
+  } 
 
     return(
         <div id='form' className={styles.form}>
@@ -79,8 +109,11 @@ const Form = () => {
                     />
             </li>
           </ul>
-          <button type="submit">Subscribe</button>
+          <button onClick={handleSubmit} >Subscribe</button>
         </form>
+        {loading ? <img src='/icons/loader.gif' className={styles.loader}/> : <></>}
+        {loading ? <div className={styles.grey}></div> : <></>}
+        {confirmation ? <div className={styles.grey}><div className={styles.confirmation}><p>{confirmation}</p></div></div> : <></>}
         </div>
     )
 }
