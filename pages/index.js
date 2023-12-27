@@ -31,7 +31,7 @@ export default function Home({ data }) {
         <div className={styles.panel}>
           <h1>Can't get enough Sunday Lead?</h1>
           <p>Congrats! You've found your people.</p>
-          <a>Listen</a>
+          <a href='https://open.spotify.com/show/4qvEFOl1hUsDmGStvtptws?si=3mVFBoR1TFSPsQZkw5sBfw'>Listen</a>
         </div>
         <div className={styles.medias}>
           <a href='https://podcasts.apple.com/us/podcast/sunday-lead/id1674646958'><img src="/icons/apple.png" alt="Apple" width={150} height={150} /></a>

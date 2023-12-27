@@ -55,6 +55,12 @@
 }
 .right p{
     margin: 0px;
+    text-align: right;
 }
 
-
+@media (max-width: 700px) {
+    .left {
+        width: 0px;
+        visibility: hidden;
+    }
+}

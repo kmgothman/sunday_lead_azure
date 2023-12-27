@@ -32,14 +32,20 @@ export default function Contact({ data }) {
         <div className={styles.panel}>
           <h1>Get In Touch</h1>
         </div>
-        <div className={styles.episodes}> 
+        <div className={styles.contact}> 
           <h2>contact info</h2>
-          <div>
-            <p>aidan.setter@focus.org</p>
-            <p>xxx-xxx-xxxx</p>
+          <div className={styles.row}>
+            <div className={styles.column}>
+              <p>jeffrey.baumbach@focus.org</p>
+              <p>xxx-xxx-xxxx</p>
+            </div>
+            <div>
+              <p>aidan.setter@focus.org</p>
+              <p>xxx-xxx-xxxx</p>
+          </div>
           </div>
         </div>
-        <div>
+        <div className={styles.subscribe}>
           <h2>Subscribe to Stay Up to Date with Aidan and Will</h2>
           <Form/>
         </div>

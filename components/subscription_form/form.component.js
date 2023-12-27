@@ -26,7 +26,7 @@ const Form = () => {
       };
 
     return(
-        <div className={styles.form}>
+        <div id='form' className={styles.form}>
         <form>
           <ul>
             <li>
@@ -46,7 +46,7 @@ const Form = () => {
                 <div className={styles.name}>
                     <input
                         type="text"
-                        name="lasttName"
+                        name="lastName"
                         value={formData.lastName}
                         onChange={handleChange}
                         placeholder=""

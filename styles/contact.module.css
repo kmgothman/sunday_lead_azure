@@ -12,72 +12,52 @@
     width: 100vw;
     display: flex;
     flex-direction: column;
+    background-color: #fac751;
     background-size: cover;
     background-position: right;
     background-repeat: no-repeat;
-    padding: 0% 10% 0% 10%;
+    padding: 0% 17% 0% 17%;
   }
   
   .panel h1{
     font-size: 4em;
     padding-top: 200px;
-    color: #fac751;
-    margin-bottom: 0px;
-  }
-
-  .recent {
+    padding-bottom: 100px;
+    
     color: #faf3e3;
-    background-color: #239678;
-    font-size: 3em;
-    padding-left: 60px;
-    padding-top: 40px;
-  }
-  .recent h2{
-    margin-top: 0px;
     margin-bottom: 0px;
   }
-  
-  .episodes {
-    display: flex;
-    flex-direction: column;
-    padding: 75px;
-    background-color: #faf3e3;
-    color: #239678;
-  }
-  
-  .searchDiv {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .searchDiv h2{
-    font-size: 3em;
-  }
-  .searchDiv input{
-    background-color: white;
-    padding: 8px;
-    border: none;
-    border-radius: 3px;
-  }
-  
-  .description {
-    display: inherit;
-    justify-content: inherit;
-    align-items: inherit;
-    font-size: 0.85rem;
-    max-width: var(--max-width);
-    width: 100%;
-    z-index: 2;
-    font-family: var(--font-mono);
-  }
-  
 
-  
-  .cardContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
+ .contact {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0% 12% 0% 12%;
+  color: #fac751;
+ }
+ .column {
+  display: flex;
+  flex-direction: column;
+ }
+ .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 1%;
+  padding-right: 1%;
+ }
+
+ .subscribe {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #239678;
+  color: #fac751;
+ }
+ .subscribe h2{
+  padding-left: 10%;
+  padding-right: 10%;
+ }
   
   
   /* Enable hover only on non-touch devices */
@@ -111,6 +91,8 @@
   
     }
     .panel h1{
+      padding-top: 100px;
+      padding-bottom: 50px;
       font-size: 4em;
       color:#6cb0e1;
     }
@@ -134,43 +116,14 @@
         width: 150px;
         margin-top: 8px;
     }
-  
-    .medias {
-      display: flex;
+
+    .contact {
+      padding: 30px 12% 30px 12%;
+    }
+    .row {
       flex-wrap: wrap;
     }
-  
-    .medias img {
-      width: 150px;
-      height: 150px;
-      padding: 0;
-      margin: 0;
-      margin-bottom: 20px;
-    }
-    .medias a {
-      padding: 0;
-      margin: 0;
-    }
-  
-    .episodes {
-      padding: 10%;
-    }
-    .searchDiv input{
-      background-color: transparent;
-      padding: 0;
-      border: none;
-      border-radius: 0;
-    }
-    .searchDiv input::placeholder{
-      color:#0d0d11;
-    }
-    .cardContainer {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-  
-  
+
   }
   
   /* Tablet and Smaller Desktop */
