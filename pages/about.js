@@ -1,4 +1,4 @@
-
+import Head from 'next/head'
 import axios from 'axios';
 import Parser from 'rss-parser'
 import styles from '../styles/about.module.css'
@@ -27,6 +27,13 @@ const About = ({data}) => {
     const aboutAidan = "I am from Topeka, KS and graduated from The University of Kansas in December 2020. At KU, I was introduced to FOCUS. Sincerely, FOCUS and The St. Lawrence Catholic Campus Center altered the trajectory of my life. I went from knowing who Jesus was, to actually knowing Jesus. John Michael Lucido and the other missionaries were there for me in the lowest moments of my life. They built me up and taught me how to live the life of a disciple of Jesus Christ. I was able to lead a bible study in my fraternity, Alpha Tau Omega, and work with two younger students in discipleship. These opportunities were very important in my deeper conversion in college. I found I was more fulfilled leading men to Christ than anything I did at KU. Due to this and my own relationship with my missionary, I said yes to serving Christ on the college campus. It has been really cool to see Christ work in my life but also in the lives of the people around me. I am excited to see what doors Jesus opens and where he leads me in the future. Praise God! Rock Chalk Jayhawk!"
     const aboutWill = "As a missionary, my greatest desire is to lead all students to Christ. My life has been transformed by Jesus and I want nothing more than to bring this joy to others and introduce them to the life-changing message of the Gospel. In His ministry on earth, Jesus humbled Himself to meet us on our level, taking on our humanity, and spent most of His time investing deeply in a few. I look to Jesus’ own example to find the best method of reaching the world. I’ve been constantly amazed by the different souls I’ve encountered on campus."
     return(
+      <>
+        <Head>
+      <title>The Sunday Lead - About</title>
+      <meta name="description" content="Learn Mor about the Sunday Lead Podcast" />
+    
+      </Head>
+      
         <main className={styles.main}>
       <div>
        <Header/>
@@ -52,6 +59,7 @@ const About = ({data}) => {
         <Footer episodes={data.episodes}/>
       </div>
     </main>
+    </>
         
     )
 }
