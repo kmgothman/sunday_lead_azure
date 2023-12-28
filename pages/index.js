@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/home.module.css'
 import axios from 'axios';
@@ -25,6 +26,12 @@ export async function getServerSideProps() {
 export default function Home({ data }) {
 
   return (
+   <>
+      <Head>
+        <title>The Sunday Lead - Home Page</title>
+        <meta name="description" content="A Podcast for christians and golf addicts" />
+        
+      </Head>
     <main className={styles.main}>
       <div>
        <Header/>
@@ -59,5 +66,6 @@ export default function Home({ data }) {
         <Footer episodes={data.episodes}/>
       </div>
     </main>
+    </>
   )
 }
