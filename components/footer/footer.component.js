@@ -26,7 +26,7 @@ const Footer = ({episodes}) => {
           </div>
           <div className={styles.column}>
             <h2>Contact</h2>
-              <p>aidan.setter@focus.org</p>
+              <p>sundaylead23@gmail.com</p>
               <div className={styles.social}>
               <a href='https://www.instagram.com/sundayleadpod/'><FaInstagram className={styles.icon} /></a>
               <a href='https://open.spotify.com/show/4qvEFOl1hUsDmGStvtptws?si=3mVFBoR1TFSPsQZkw5sBfw'><FaSpotify className={styles.icon} /></a>

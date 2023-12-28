@@ -10,7 +10,7 @@ const Header = () => {
     return(
         <div className={styles.header}>
             <div className={styles.social}>
-                <Link href={{ pathname: '/contact', hash: 'form' }}>Newsletter</Link>
+                <Link href={{ pathname: '/contact', hash: 'form' }}>NEWSLETTER</Link>
                 <div >
                     <a href='https://www.instagram.com/sundayleadpod/'><FaInstagram className={styles.icon} /></a>
                     <a href='https://open.spotify.com/show/4qvEFOl1hUsDmGStvtptws?si=3mVFBoR1TFSPsQZkw5sBfw'><FaSpotify className={styles.icon} /></a>

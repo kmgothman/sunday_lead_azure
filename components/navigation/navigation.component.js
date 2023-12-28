@@ -29,9 +29,9 @@ const Navigation = () => {
               <img src='/images/logo.png' width={isScrolled ? '110' : '150'} />
             </Link>
             <div className={styles.links}>
-                <Link href="/about">About</Link>
-                <Link href="/episodes">Episodes</Link>
-                <Link href="/contact">Contact</Link>
+                <Link href="/about">ABOUT</Link>
+                <Link href="/episodes">EPISODES</Link>
+                <Link href="/contact">CONTACT</Link>
             </div>
         </div>
     )

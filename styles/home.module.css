@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@700&display=swap');
+
 .main {
   background-color: #faf3e3;
   display: flex;
@@ -20,9 +22,13 @@
 
 .panel h1{
   font-size: 4em;
+  font-weight: bold;
+  /* font-family: 'Oleo Script'; */
+  color:#faf3e3;
 }
 .panel p {
   font-size: 1.5em;
+  color:#faf3e3
 }
 
 .panel a{
