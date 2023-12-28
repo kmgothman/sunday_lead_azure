@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import styles from '../styles/episodes.module.css'
 import axios from 'axios';
 import Parser from 'rss-parser'
@@ -28,6 +29,12 @@ export async function getServerSideProps() {
 export default function Episodes({ data }) {
 
   return (
+    <>
+    <Head>
+    <title>The Sunday Lead - Episodes</title>
+    <meta name="description" content="Episode list for the Sunday Lead Podcast" />
+    
+    </Head>
     <main className={styles.main}>
       <div>
        <Header/>
@@ -45,5 +52,6 @@ export default function Episodes({ data }) {
         <Footer episodes={data.episodes}/>
       </div>
     </main>
+    </>
   )
 }
