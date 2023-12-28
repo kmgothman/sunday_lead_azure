@@ -1,4 +1,4 @@
-
+import Head from 'next/head'
 import styles from '../styles/contact.module.css'
 import axios from 'axios';
 import Parser from 'rss-parser'
@@ -26,6 +26,13 @@ export async function getServerSideProps() {
 export default function Contact({ data }) {
 
   return (
+    <>
+    <Head>
+    <title>The Sunday Lead - Contact</title>
+    <meta name="description" content="Contact Us at the Sunday Lead Podcast" />
+    
+    </Head>
+    
     <main className={styles.main}>
       <div>
        <Header/>
@@ -52,5 +59,6 @@ export default function Contact({ data }) {
         <Footer episodes={data.episodes}/>
       </div>
     </main>
+    </>
   )
 }
