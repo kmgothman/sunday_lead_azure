@@ -6,7 +6,7 @@ const EpisodeCard = ({title,description,imgLink,link}) => {
         
         <div className={styles.card}>
             <a href={link}>
-            <img src={imgLink} width='100%' height={'300'} alt='photo'/>
+            <img src={imgLink} width='100%' height={'300'} alt='episode image'/>
             <div className={styles.description}>
                 <h2>{title}</h2>
                 <p>{description}</p>

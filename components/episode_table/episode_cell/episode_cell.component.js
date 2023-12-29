@@ -18,7 +18,7 @@ const EpisodeCell = ({title,description,imgLink,link,pubDate,duration}) => {
         <a href={link}>
         <div className={styles.cell}>
             <div className={styles.left}>
-                <img src={imgLink}/>
+                <img src={imgLink} alt='episode image'/>
             </div>
             <div className={styles.middle}>
                 <h3>{title}</h3>

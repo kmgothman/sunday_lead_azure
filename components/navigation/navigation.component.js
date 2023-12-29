@@ -26,7 +26,7 @@ const Navigation = () => {
     return (
         <div className={`${styles.nav} ${isScrolled ? styles.colorBackground : ''}`} >
             <Link href="/">
-              <img src='/images/logo.png' width={isScrolled ? '110' : '150'} />
+              <img src='/images/logo.png' width={isScrolled ? '110' : '150'} alt='Logo'/>
             </Link>
             <div className={styles.links}>
                 <Link href="/about">ABOUT</Link>

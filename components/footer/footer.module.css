@@ -17,9 +17,11 @@
     margin-bottom: 10px;
   }
   .footer a{
-    margin-bottom: 7px;
+    margin-bottom: 15px;
+    margin-right: 10px;
     color:#ffffff;
     cursor: pointer;
+  
   }
   .footer a:hover{
     color: #239678;

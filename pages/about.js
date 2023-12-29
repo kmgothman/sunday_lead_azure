@@ -44,7 +44,7 @@ const About = ({data}) => {
             <h2 className={styles.heading}>About You</h2>
         </div>
         <div className={styles.aboutYou}>
-            <img src='/images/logo.png'/>
+            <img src='/images/logo.png' alt='Logo'/>
             <div className={styles.description}>
               <p>Interested in content that delves into the intersection of spirituality and sport? Welcome to the Sunday Lead—a platform for those intrigued by the convergence of faith and fairways. Our podcast is a meeting ground for avid golfers, spiritual seekers, and anyone intrigued by the interplay of athletic pursuit and spiritual growth.</p>
               <p>Our audience is as diverse as the conversations we foster, coming from all walks of life and every corner of the world, drawn together by a shared intrigue for what happens when the worlds of spirituality and sports collide. We don’t just celebrate the commonalities between these two worlds; we explore their unique synergy.</p>

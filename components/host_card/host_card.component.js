@@ -33,7 +33,7 @@ const HostCard = ({imageSrc,description, color}) => {
             </div>
           :
             <div className={styles.cardFront} >
-              <img src={imageSrc} alt="Card" />
+              <img src={imageSrc} alt="Host Image" />
             </div>
           }
         </div>
